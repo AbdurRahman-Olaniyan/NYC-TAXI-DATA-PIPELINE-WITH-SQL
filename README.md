@@ -17,7 +17,8 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 # Metadata management for dynamic loading
 
 # Example queries
--- Which vendor had the highest total revenue on the top 5 days in Q1 2024?
+#### Which vendor had the highest total revenue on the top 5 days in Q1 2024?
+```sql
 SELECT 
    TOP 5 TripDate,
     VendorName,
@@ -27,8 +28,10 @@ FROM Gold.nyc_tripdata_2024
 WHERE TripDate BETWEEN '2024-01-01' AND '2024-03-31'
 GROUP BY TripDate, VendorName
 ORDER BY TotalRevenue DESC;
+```
 
--- What is the average trip distance and duration per payment type in Q1 2024?
+#### What is the average trip distance and duration per payment type in Q1 2024?
+```sql
 SELECT 
     PaymentType,
     ROUND(AVG(AvgDistance), 2) AS AvgTripDistance,
@@ -36,3 +39,4 @@ SELECT
 FROM Gold.nyc_tripdata_2024
 WHERE TripDate BETWEEN '2024-01-01' AND '2024-03-31'
 GROUP BY PaymentType;
+```
