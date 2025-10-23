@@ -1,0 +1,24 @@
+USE master;
+GO
+
+-- Drop and recreate the 'DWH1' database
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DWH1')
+BEGIN
+	ALTER DATABASE DWH1 SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE DWH1;
+END;
+GO
+
+-- Create the 'DWH1' database
+CREATE DATABASE DWH1;
+GO
+
+USE DWH1;
+GO
+
+CREATE SCHEMA bronze
+GO
+
+--CREATE SCHEMA silver;
+--GO
+--CREATE SCHEMA Gold;
