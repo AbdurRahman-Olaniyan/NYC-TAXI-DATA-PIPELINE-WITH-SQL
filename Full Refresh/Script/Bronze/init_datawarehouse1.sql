@@ -4,8 +4,8 @@ create Database and Schemas
 ===============================================================
 script purpose:
 	This script create a new database named 'DataWareHouse' after checking if it already exists.
-	If teh database exists, it is dropped and recreated. Additionally, the script sets up three schemas
-	within the database: 'bronze', 'silver', 'gold'.
+	If the database exists, it is dropped and recreated. Additionally, the script sets up a schema
+	within the database: 'bronze'.
 
 WARNING:
 	Running this script will drop the entire 'DataWarHouse' database if its exists.
@@ -32,8 +32,3 @@ GO
 
 -- Create schema
 CREATE SCHEMA bronze;
-GO
-CREATE SCHEMA silver;
-GO
-CREATE SCHEMA gold;
-GO
