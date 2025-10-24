@@ -25,31 +25,31 @@ WITH AggregatedTrips AS (
 	SELECT
 		CAST(tpep_pickup_datetime AS DATE) AS TripDate,
 		VendorID,
-		CASE VendorID
-			WHEN 1 THEN 'Creative Mobile Technologies'
-			WHEN 2 THEN 'Curb Mobility'
-			WHEN 6 THEN 'Myle Technologies Inc'
-			WHEN 7 THEN 'Helix'
+		CASE
+			WHEN VendorID = 1 THEN 'Creative Mobile Technologies'
+			WHEN VendorID = 2 THEN 'Curb Mobility'
+			WHEN VendorID = 6 THEN 'Myle Technologies Inc'
+			WHEN VendorID = 7 THEN 'Helix'
 			ELSE 'Unknown'
 		END AS VendorName,
 		RatecodeID,
-		CASE RatecodeID
-			WHEN 1 THEN 'Standard rate'
-			WHEN 2 THEN 'JFK'
-			WHEN 3 THEN 'Newark'
-			WHEN 4 THEN 'Nassau/Westchester'
-			WHEN 5 THEN 'Negotiated fare'
-			WHEN 6 THEN 'Group ride'
+		CASE
+			WHEN RatecodeID = 1 THEN 'Standard rate'
+			WHEN RatecodeID = 2 THEN 'JFK'
+			WHEN RatecodeID = 3 THEN 'Newark'
+			WHEN RatecodeID = 4 THEN 'Nassau/Westchester'
+			WHEN RatecodeID = 5 THEN 'Negotiated fare'
+			WHEN RatecodeID = 6 THEN 'Group ride'
 			ELSE 'Unknown'
 		END AS RateCode,
 		payment_type,
-		CASE payment_type
-			WHEN 1 THEN 'Credit card'
-			WHEN 2 THEN 'Cash'
-			WHEN 3 THEN 'No charge'
-			WHEN 4 THEN 'Dispute'
-			WHEN 5 THEN 'Unknown'
-			WHEN 6 THEN 'Voided trip'
+		CASE
+			WHEN payment_type = 1 THEN 'Credit card'
+			WHEN payment_type = 2 THEN 'Cash'
+			WHEN payment_type = 3 THEN 'No charge'
+			WHEN payment_type = 4 THEN 'Dispute'
+			WHEN payment_type = 5 THEN 'Unknown'
+			WHEN payment_type = 6 THEN 'Voided trip'
 			ELSE 'Other'
 		END AS PaymentType,
 		COUNT(*) AS TotalTrips,
