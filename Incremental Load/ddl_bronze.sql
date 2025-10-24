@@ -21,3 +21,9 @@ CREATE TABLE bronze.yellow_tripdata_2024(
 	congestion_surcharge DECIMAL(12,2),
 	Airport_fee DECIMAL(12,2)
 );
+GO
+
+IF OBJECT_ID ('bronze.watermarktable', 'U') IS NOT NULL
+	DROP TABLE bronze.watermarktable;
+CREATE TABLE bronze.watermarktable(
+	
