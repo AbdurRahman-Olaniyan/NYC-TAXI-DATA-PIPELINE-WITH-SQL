@@ -6,6 +6,7 @@ This project demonstrate the design and implementation of a simple, SQL based da
 # Data Architecture
 ----
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers for both **Full Load** and **Incremental Load** Scenarios:
+
 ![Data Pipeline Architecture](Data-Architecture.png)
 
 # Design Rationale
@@ -32,7 +33,8 @@ Each layer is rebuilt from scratch to ensure consistency and data integrity acro
 
 # Metadata management for dynamic loading
 During a full refresh, a metadata column is added to the silver layer to record the ModifiedDate for each ingested record. This timestamp reflects when the data was loaded into the system, enabling clear visibily into when each record entered the pipeline and to distinguish between historical and newly refreshed data.
-![alt text](<Full Refresh/Script/Silver/metadatacolumninsilver.png>)
+
+![Metadatacolumn](<Full Refresh/Script/Silver/metadatacolumninsilver.png>)
 
 # Example queries
 #### Which vendor had the highest total revenue on the top 5 days in Q1 2024?
