@@ -19,6 +19,8 @@ GO
 CREATE SCHEMA bronze
 GO
 
---CREATE SCHEMA silver;
---GO
---CREATE SCHEMA Gold;
+CREATE SCHEMA silver;
+GO
+CREATE SCHEMA gold;
+GO
+CREATE SCHEMA metadata

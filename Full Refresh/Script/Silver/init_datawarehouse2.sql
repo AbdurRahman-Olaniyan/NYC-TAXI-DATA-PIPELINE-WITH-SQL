@@ -17,4 +17,6 @@ USE DataWareHouse2;
 GO
 
 CREATE SCHEMA silver;
+GO
+
 CREATE SCHEMA Gold;
